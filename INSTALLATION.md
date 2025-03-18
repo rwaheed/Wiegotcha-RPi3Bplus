@@ -34,7 +34,7 @@ sudo apt-get -y install git
 
 # Clone the updated Wiegotcha repository
 cd ~
-git clone https://github.com/yourusername/Wiegotcha-RPi3Bplus.git Wiegotcha
+git clone https://github.com/rwaheed/Wiegotcha-RPi3Bplus.git Wiegotcha
 
 # Run the installation script
 cd Wiegotcha
