@@ -88,7 +88,7 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/root/wiegotcha
+ExecStart=/root/Wiegotcha-RPi3Bplus
 Restart=always
 RestartSec=10
 
@@ -102,7 +102,7 @@ systemctl enable wiegotcha.service
 rm ./laststep.sh
 echo -e "\e[0;31m[+] Installation almost complete.\e[0m"
 echo -e "\e[0;31m[+] One more reboot needed.\e[0m"
-echo -e "\e[0;31m[+] After reboot, if your hwclock time (UTC) is incorrect, run /root/Wiegotcha/fixclock.sh\e[0m"
+echo -e "\e[0;31m[+] After reboot, if your hwclock time (UTC) is incorrect, run /root/Wiegotcha-RPi3Bplus/fixclock.sh\e[0m"
 echo ""
 echo -n -e "\e[0;31m[+]Press any key to reboot.\e[0m"
 read -e NULL
