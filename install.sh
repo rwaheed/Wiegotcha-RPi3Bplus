@@ -130,7 +130,7 @@ cd ~/
 #Copying Wiegotcha specific conf files
 #Configs include: dhcpd, hostapd, interfaces, rc.local, and default html pages
 echo "[*] Copying config files"
-cd ./Wiegotcha/
+cd ./Wiegotcha-RPi3Bplus/
 cp ./confs/dhcpd.conf /etc/dhcp/
 cp ./confs/hostapd.conf /etc/hostapd/
 cp ./confs/interfaces /etc/network/
