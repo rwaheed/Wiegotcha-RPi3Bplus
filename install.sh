@@ -8,6 +8,7 @@
 # 2016
 #
 # Updated for Raspberry Pi 3 B+ compatibility in 2025
+# Repository: https://github.com/rwaheed/Wiegotcha-RPi3Bplus
 #
 ########################################################################
 ######################                            ######################
@@ -130,7 +131,7 @@ cd ~/
 #Copying Wiegotcha specific conf files
 #Configs include: dhcpd, hostapd, interfaces, rc.local, and default html pages
 echo "[*] Copying config files"
-cd ./Wiegotcha-RPi3Bplus/
+cd ./Wiegotcha/
 cp ./confs/dhcpd.conf /etc/dhcp/
 cp ./confs/hostapd.conf /etc/hostapd/
 cp ./confs/interfaces /etc/network/
@@ -158,6 +159,19 @@ fi
 
 # Install I2C tools
 apt-get -y install i2c-tools
+
+# Create a screen session that will survive the reboot
+echo "[*] Creating installation screen session"
+cat > /root/continue_install.sh << 'EOF'
+#!/bin/bash
+cd /root
+./laststep.sh
+EOF
+
+chmod +x /root/continue_install.sh
+
+# Start a detached screen session that will run after reboot
+screen -dmS install -L /root/continue_install.sh
 
 echo -e "\e[0;31m[+] The system will now reboot. After reboot, login then 'sudo su -' (or login as root)\e[0m"
 echo -e "\e[0;31m[+] Once you're root, type 'screen -dr install' to complete the installation.\e[0m"

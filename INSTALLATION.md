@@ -162,10 +162,24 @@ If you cannot access the web interface:
    sudo systemctl restart apache2
    ```
 
+### Screen Session Issues
+
+If you encounter the error "there is no screen to be detected matching install" after the first reboot:
+
+1. The screen session may not have been properly created during installation
+2. Simply run the laststep.sh script directly:
+   ```bash
+   sudo su -
+   cd /root
+   ./laststep.sh
+   ```
+
 ## Additional Information
 
 - All captured badges are stored in `/var/www/html/data.csv`
 - Previous data is backed up to `/var/www/html/backup/<TIMESTAMP>.data.csv` at each boot
 - Directory indexing is enabled for easy browsing of backed-up badges (http://192.168.150.1/backup/)
 
-For more information and updates, visit the original project page: https://exfil.co/2017/01/17/wiegotcha-rfid-thief/
+For more information and updates, visit:
+- Original project page: https://exfil.co/2017/01/17/wiegotcha-rfid-thief/
+- Updated repository: https://github.com/rwaheed/Wiegotcha-RPi3Bplus
