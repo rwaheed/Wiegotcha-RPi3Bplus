@@ -131,17 +131,18 @@ cd ~/
 #Copying Wiegotcha specific conf files
 #Configs include: dhcpd, hostapd, interfaces, rc.local, and default html pages
 echo "[*] Copying config files"
-cd ./Wiegotcha/
+cd ./Wiegotcha-RPi3Bplus/
 cp ./confs/dhcpd.conf /etc/dhcp/
 cp ./confs/hostapd.conf /etc/hostapd/
 cp ./confs/interfaces /etc/network/
 cp -R ./html/* /var/www/html/
 cp ./confs/rctmp.local /etc/rc.local
 cp ./laststep.sh ../
+chmod +x ./laststep.sh
 mkdir -p /var/www/html/backup/
 sed -i 's|#DAEMON_CONF=""|DAEMON_CONF=/etc/hostapd/hostapd.conf|g' /etc/default/hostapd
 echo "[*] Compiling Wiegotcha C code"
-gcc -o ../wiegotcha wiegotcha.c -L/usr/local/lib -lwiringPi -lpthread
+gcc -o ../Wiegotcha-RPi3Bplus wiegotcha.c -L/usr/local/lib -lwiringPi -lpthread
 
 #Enable i2c on boot for hardware clock (automated method)
 echo "[*] Enabling I2C interface automatically"
