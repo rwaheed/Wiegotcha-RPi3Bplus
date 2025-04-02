@@ -125,7 +125,7 @@ fi
 echo "[*] Cloning WiringPi from GitHub (maintained fork)"
 git clone https://github.com/WiringPi/WiringPi.git
 cd WiringPi
-./build
+./build debian
 cd ~/
 
 #Copying Wiegotcha specific conf files
